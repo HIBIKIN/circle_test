@@ -4,7 +4,7 @@ const Footer: FC = () => {
   return (
     <div>
       <footer>
-        <p>©️企画集団便利舎</p>
+        <p><span>©</span>企画集団便利舎</p>
       </footer>
     </div>
   );
