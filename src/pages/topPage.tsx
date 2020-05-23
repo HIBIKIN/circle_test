@@ -17,9 +17,15 @@ const useStyle = makeStyles(() =>
   createStyles({
     root: {
       height: '100vh',
+
     },
     blank: {
       backgroundColor: '#F8E266',
+    },
+    main: {
+      display: "flex",
+      flexDirection: "column",
+      minHeight: "100vh",
     },
 
   }),
@@ -36,8 +42,10 @@ const TopPage: FC = () => {
           <Grid container className={classes.root}>
             <Grid item sm={3} className={classes.blank}></Grid>
             <Grid item sm={6} xs={12}>
-              <Header />
-              <StartBlock />
+              <div className={classes.main}>
+                <Header />
+                <StartBlock />
+              </div>
               <Footer />
             </Grid>
             <Grid item sm={3} className={classes.blank}></Grid>
@@ -47,8 +55,10 @@ const TopPage: FC = () => {
           <Grid container className={classes.root}>
             <Grid item sm={3} className={classes.blank}></Grid>
             <Grid item sm={6} xs={12}>
-              <Header />
-              <QuestionPage />
+              <div className={classes.main}>
+                <Header />
+                <QuestionPage />
+              </div>
               <Footer />
             </Grid>
             <Grid item sm={3} className={classes.blank}></Grid>
