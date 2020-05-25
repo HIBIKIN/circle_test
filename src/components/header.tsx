@@ -13,12 +13,14 @@ const useStyle = makeStyles(() =>
     title: {
       // backgroundColor: "#00BC13",
       textAlign: "center",
+      marginTop: "10px",
       '& h1': {
         position: "relative",
         // width: "50%",
         margin: "0 auto",
         textAlign: "center",
         display: "inline-block",
+        fontSize: "39px",
       },
     },
     block: {
@@ -33,6 +35,7 @@ const useStyle = makeStyles(() =>
       textAlign: "center",
       fontSize: "14px",
       marginBottom: "50px",
+      marginTop: "3px",
     },
   }),
 )

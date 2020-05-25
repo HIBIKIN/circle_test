@@ -2,15 +2,63 @@ import React, { FC } from 'react';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import Fab from '@material-ui/core/Fab';
 
 
 const useStyle = makeStyles(() =>
   createStyles({
-    startButton: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      margin: '20px',
+    paper: {
+      padding: "5px",
+      margin: "0 30px",
+      height: "230px",
+    },
+    howQuestion: {
+      marginTop: '5px',
+      marginBottom: "20px",
+
+      '& span': {
+        padding: "7px",
+        marginLeft: '10px',
+        marginTop: "10px",
+        background: "#f5f4f2",
+        borderRadius: "9999px",
+      },
+    },  
+    questionText: {
+      margin: "5px",
+      textAlign: "center",
+    },
+    choicelist: {
+      width: "100%",
+      padding: "5px",
+      diaplay: "table",
+      marginTop: "25px",
+    },
+    choice: {
+      width: "19%",
+      listStyle: "none",
+      margin: "0 auto",
+      display: "table-cell",
+      float: "left",
+      textAlign: "center",
+    },
+    button: {
+      width: "50px",
+      height: "50px",
+      backgroundColor: "#fff",
+      borderRadius: "50%",
+      overflow: "hidden",
+      boxShadow: "0px 0px 0px 15px #EEEEEE inset",
+      border: "none",
+      // diaplay: "block",
+
+      '&:hover': {
+        boxShadow: "0px 0px 0px 15px #E0E0E0 inset",
+      },
+    },
+    buttonText: {
+      fontSize: "10px",
+      width: "75%",
+      margin: "1px auto",
     },
 
   }),
@@ -18,29 +66,35 @@ const useStyle = makeStyles(() =>
 
 
 const Question1: FC = () => {
+  const classes = useStyle();
   return (
-    <Paper>
-      <p>第1/10問</p>
-      <h2>友達100人作りたい</h2>
-      <div>
-        <Fab>◉</Fab>
-        <p>とても当てはまる</p>
+    <Paper elevation={3} className={classes.paper}>
+      <div className={classes.howQuestion}>
+        <span>第1/10問</span>
       </div>
-      <div>
-        <Fab>◉</Fab>
-        <p>やや当てはまる</p>
-      </div>
-      <div>
-        <Fab>◉</Fab>
-        <p>どちらとも言えない</p>
-      </div>
-      <div>
-        <Fab>◉</Fab>
-        <p>あまり当てはまらない</p>
-      </div>
-      <div>
-        <Fab>◉</Fab>
-        <p>全く当てはまらない</p>
+      <h2 className={classes.questionText}>友達100人作りたい!</h2>
+      <div className={classes.choicelist}>
+        <li className={classes.choice}>
+          <button className={classes.button}></button>
+          <p className={classes.buttonText}>とても当てはまる</p>
+        </li>
+        <li className={classes.choice}>
+          <button className={classes.button}></button>
+          <p className={classes.buttonText}>やや当てはまる</p>
+        </li>
+        <li className={classes.choice}>
+          <button className={classes.button}></button>
+          <p className={classes.buttonText}>どちらとも言えない</p>
+        </li>
+        <li className={classes.choice}>
+          <button className={classes.button}></button>
+          <p className={classes.buttonText}>あまり当てはまらない</p>
+        </li>
+        <li className={classes.choice}>
+          <button className={classes.button}></button>
+          <p className={classes.buttonText}>全く当てはまらない</p>
+        </li>
+
       </div>
     </Paper>
   );
