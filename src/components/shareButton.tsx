@@ -5,7 +5,16 @@ import Button from '@material-ui/core/Button';
 const useStyle = makeStyles(() =>
   createStyles({
     buttonStyle: {
-      // height: '300px',
+      textTransform: 'none',
+      display: "block",
+      margin: "40px auto",
+      width: "314px",
+      height: "50px",
+      backgroundColor: "#17ACFF",
+      color: "#fff",
+      borderRadius: "9999px",
+      fontSize: "20px",
+      fontWeight: "bold",
     },
 
   }),
@@ -14,7 +23,7 @@ const useStyle = makeStyles(() =>
 const ShareButton: FC = () => {
   const classes = useStyle();
   return(
-    <Button className={classes.buttonStyle} variant="contained" color="primary">
+    <Button className={classes.buttonStyle} variant="contained">
       Twitterで結果をシェア
     </Button>
   );

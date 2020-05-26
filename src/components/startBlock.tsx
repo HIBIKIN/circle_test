@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom'
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 
@@ -23,6 +24,9 @@ const useStyle = makeStyles(() =>
       fontSize: "20px",
       backgroundColor: '#FBD605',
     },
+    link: {
+      textDecoration: "none",
+    },
 
   }),
 )
@@ -39,9 +43,11 @@ const StartBlock: FC = () => {
         <br/>性格診断とおすすめのサークルを
         <br/>見てみよう
       </p>
-      <Button className={classes.startButton} variant="contained">
-        診断を開始する
-      </Button>
+      <Link className={classes.link} to="/question">
+        <Button className={classes.startButton} variant="contained">
+          診断を開始する
+        </Button>
+      </Link>
     </Paper>
   );
 }

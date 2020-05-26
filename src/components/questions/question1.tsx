@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 
 
 const useStyle = makeStyles(() =>
@@ -75,23 +75,23 @@ const Question1: FC = () => {
       <h2 className={classes.questionText}>友達100人作りたい!</h2>
       <div className={classes.choicelist}>
         <li className={classes.choice}>
-          <button className={classes.button}></button>
+          <IconButton className={classes.button}></IconButton>
           <p className={classes.buttonText}>とても当てはまる</p>
         </li>
         <li className={classes.choice}>
-          <button className={classes.button}></button>
+          <IconButton className={classes.button}></IconButton>
           <p className={classes.buttonText}>やや当てはまる</p>
         </li>
         <li className={classes.choice}>
-          <button className={classes.button}></button>
+          <IconButton className={classes.button}></IconButton>
           <p className={classes.buttonText}>どちらとも言えない</p>
         </li>
         <li className={classes.choice}>
-          <button className={classes.button}></button>
+          <IconButton className={classes.button}></IconButton>
           <p className={classes.buttonText}>あまり当てはまらない</p>
         </li>
         <li className={classes.choice}>
-          <button className={classes.button}></button>
+          <IconButton className={classes.button}></IconButton>
           <p className={classes.buttonText}>全く当てはまらない</p>
         </li>
 

@@ -63,7 +63,7 @@ const TopPage: FC = () => {
             <Grid item sm={3} className={classes.blank}></Grid>
           </Grid>
         </Route>
-        <Route exact path="/result">
+        <Route exact path="/result/:keyword">
           <Grid container className={classes.root}>
             <Grid item sm={3} className={classes.blank}></Grid>
             <Grid item sm={6} xs={12}>
