@@ -65,8 +65,10 @@ const useStyle = makeStyles(() =>
 )
 
 
-const Question1: FC = () => {
+const Question1: FC = (props) => {
   const classes = useStyle();
+  const q1 = props
+
   return (
     <Paper elevation={3} className={classes.paper}>
       <div className={classes.howQuestion}>
