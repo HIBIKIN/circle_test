@@ -8,7 +8,7 @@ const useStyle = makeStyles(() =>
   createStyles({
     paper: {
       padding: "5px",
-      margin: "0 30px",
+      margin: "40px 30px",
       height: "230px",
     },
     howQuestion: {

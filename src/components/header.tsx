@@ -51,7 +51,7 @@ const Header: FC = () => {
       </header>
       <div className={classes.title}>
         <h1>
-          早稲田サークル診断
+          ワセダサークル診断
           <Paper elevation={3} square className={classes.block}></Paper>
         </h1>
       </div>
