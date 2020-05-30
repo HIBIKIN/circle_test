@@ -1,0 +1,32 @@
+
+import React, { FC, useState } from "react";
+import Question from '../components/questions/question';
+
+const QuestionPage: FC = () => {
+  const [data, setData] = useState();
+
+  let answer = 0
+  const handleAnswer = (answer) => {
+    answer = answer
+  }
+
+
+  return (
+    <div>
+      <p>{answer}</p>
+      <Question
+        q={"友達100人作りたい"}
+        n={1}
+        handleAnswer={handleAnswer(a: any,)}
+        // a={answer}
+      />
+      <Question
+        q={"自分、彼女ほしいっす"}
+        n={2}
+        // a={answer}
+      />
+    </div>
+  );
+}
+
+export default QuestionPage;

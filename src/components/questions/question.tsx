@@ -65,41 +65,46 @@ const useStyle = makeStyles(() =>
 )
 
 
-const Question1: FC = (props) => {
+type Props = {
+  q: string,
+  n:number,
+  handleAnswer: any
+}
+
+
+const Question: React.FC<Props> = ({n, q, handleAnswer}) => {
   const classes = useStyle();
-  const q1 = props
 
   return (
     <Paper elevation={3} className={classes.paper}>
       <div className={classes.howQuestion}>
-        <span>第1/10問</span>
+        <span>第{n}/10問</span>
       </div>
-      <h2 className={classes.questionText}>友達100人作りたい!</h2>
+      <h2 className={classes.questionText}>{q}</h2>
       <div className={classes.choicelist}>
         <li className={classes.choice}>
-          <IconButton className={classes.button}></IconButton>
+          <IconButton className={classes.button} onClick={() => handleAnswer(1)}></IconButton>
           <p className={classes.buttonText}>とても当てはまる</p>
         </li>
         <li className={classes.choice}>
-          <IconButton className={classes.button}></IconButton>
+          <IconButton className={classes.button} onClick={() => handleAnswer(2)}></IconButton>
           <p className={classes.buttonText}>やや当てはまる</p>
         </li>
         <li className={classes.choice}>
-          <IconButton className={classes.button}></IconButton>
+          <IconButton className={classes.button} onClick={() => handleAnswer(3)}></IconButton>
           <p className={classes.buttonText}>どちらとも言えない</p>
         </li>
         <li className={classes.choice}>
-          <IconButton className={classes.button}></IconButton>
+          <IconButton className={classes.button} onClick={() => handleAnswer(4)}></IconButton>
           <p className={classes.buttonText}>あまり当てはまらない</p>
         </li>
         <li className={classes.choice}>
-          <IconButton className={classes.button}></IconButton>
+          <IconButton className={classes.button} onClick={() => handleAnswer(5)}></IconButton>
           <p className={classes.buttonText}>全く当てはまらない</p>
         </li>
-
       </div>
     </Paper>
   );
 }
 
-export default Question1;
+export default Question;
