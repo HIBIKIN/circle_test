@@ -43,42 +43,30 @@ const useStyle = makeStyles(() =>
 
 const Result1: FC = () => {
   const classes = useStyle();
-  const [data, setData] = useState<CircleData[]>([]);
+  const [circle, setCircle] = useState<CircleData>(Object) //初期値に空のObjectを入れてる。けど書き方よくないっぽい？interface作るでもいいかも
   const { keyword } = useParams();
 
   const getData = async(searchWord: string) => {
     const db = firebase.firestore();
-    const circleDataRef = db.collection("circleData");
-    const searchedData = circleDataRef.where("keyword", "==", searchWord);
-    const circle = await searchedData.get();
-    const temporaryData: object[] = [];
-    circle.docs.map(doc => {
-      temporaryData.push(doc.data());
-    })
-    setData(temporaryData as CircleData[]);
+    const circleDataRef = db.collection("circleData").doc(searchWord); //documentがsearchWordの奴を選択してる
+    const circle = await circleDataRef.get(); //さっき洗濯した奴をgetで取ってきてる
+    const temporaryData = circle.data();  //circleの中身を入れてる
+    setCircle(temporaryData as CircleData);
   }
 
   useEffect(() => {
     getData(keyword);
   }, []);
 
-
   return(
     <div>
-      {data.map((circle) => (
         <div>
           <img className={classes.circleImage} src={circle.image} alt={circle.name} />
           <h3 className={classes.title}>{circle.name}</h3>
         </div>
-      ))}
       <ShareButton />
       <Paper elevation={1} className={classes.paper}>
-        <p>
-          〇〇なあなたにおすすめのサークルは
-          <br />放送研究会！
-          <br />人数が多くてたくさん友達ができそうな予感！
-          <br />〇〇なあなたを一言で表すと
-        </p>
+        <p>{circle.text}</p>
       </Paper>
       <StartBlock />
       <ShareButton />
