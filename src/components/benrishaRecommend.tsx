@@ -50,8 +50,7 @@ const BenrishaRecommend: FC = () => {
       <p className={classes.text}>
         このサークルもおすすめ!!
       </p>
-      <img className={classes.circleImage} src="../assets/images/benrisha_square.jpeg" alt="便利舎画像"/>
-      <img className={classes.circleImage} src="http://img.kb-cdn.com/imgviewer/NVpIM2ptOHhYRzVmUk5rM1NrNlFxYVV6enV4aGk2UFRJMmxPckdDUUVNWTd3M0dVelBhYllTVTJTSVhOWUhCUGNGbzVhc0UvamVIWlVLRmxzUlJPd3lpQTZTMkhkdk8zbkszeEhpdmlSdVc1QW5rUDRHUlUvVzZCbXV4MDZRdkVKK1BpT0VoSk0reTRqdnFOLy9XL3JYTi9VcnFoK3V1ZS9mU2RrdkZuM3h2Y1dWaE9zRlhVVlRKMkdab3J5cExuRStPWm13MVAxajdKYXlhMENUNUtwUT09/webp" alt="便利舎画像"/>
+      <img className={classes.circleImage} src="/images/benrisha_square.jpeg" alt="便利舎画像"/>
       <Paper className={classes.paper}>
         <p>
           便利舎は早稲田大学公認の企画サークルだよ！

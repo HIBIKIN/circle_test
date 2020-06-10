@@ -37,6 +37,10 @@ const useStyle = makeStyles(() =>
       marginBottom: "50px",
       marginTop: "3px",
     },
+    logo: {
+      height: "60px",
+      weight: "60px",
+    },
   }),
 )
 
@@ -45,7 +49,8 @@ const Header: FC = () => {
   return(
     <div>
       <header className={classes.header}>
-        <img src="https://placehold.jp/50x50.png" alt="便利舎ロゴ"/>
+        {/* <img src="https://placehold.jp/50x50.png" alt="便利舎ロゴ"/> */}
+        <img className={classes.logo} src="/images/benlogo.png" alt="便利舎ロゴ"/>
 
 
       </header>
