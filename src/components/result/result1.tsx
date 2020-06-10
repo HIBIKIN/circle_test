@@ -1,10 +1,14 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import ShareButton from '../shareButton';
 import StartBlock from '../startBlock';
 import BenrishaRecommend from '../benrishaRecommend';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+
+import firebase from '../../firebase';
+import { CircleData } from '../../types/types';
+import {useParams} from 'react-router-dom';
 
 
 const useStyle = makeStyles(() =>
@@ -20,14 +24,17 @@ const useStyle = makeStyles(() =>
         textAlign: "center",
         fontSize: "18px",
       },
-
     },
     circleImage: {
       width: "300px",
       height: "300px",
       display: "block",
       margin: "0 auto",
-
+    },
+    title: {
+      // marginLeft: "30px",
+      fontSize: "22px",
+      textAlign: "center",
     },
   }),
 )
@@ -36,9 +43,34 @@ const useStyle = makeStyles(() =>
 
 const Result1: FC = () => {
   const classes = useStyle();
+  const [data, setData] = useState<CircleData[]>([]);
+  const { keyword } = useParams();
+
+  const getData = async(searchWord: string) => {
+    const db = firebase.firestore();
+    const circleDataRef = db.collection("circleData");
+    const searchedData = circleDataRef.where("keyword", "==", searchWord);
+    const circle = await searchedData.get();
+    const temporaryData: object[] = [];
+    circle.docs.map(doc => {
+      temporaryData.push(doc.data());
+    })
+    setData(temporaryData as CircleData[]);
+  }
+
+  useEffect(() => {
+    getData(keyword);
+  }, []);
+
+
   return(
     <div>
-      <img src="https://placehold.jp/300x300.png" alt="サークル画像" className={classes.circleImage} />
+      {data.map((circle) => (
+        <div>
+          <img className={classes.circleImage} src={circle.image} alt={circle.name} />
+          <h3 className={classes.title}>{circle.name}</h3>
+        </div>
+      ))}
       <ShareButton />
       <Paper elevation={1} className={classes.paper}>
         <p>

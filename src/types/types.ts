@@ -10,3 +10,9 @@ export type AnswerData = {
 //   q9: number;
 //   q10: number;
 }
+
+export type CircleData = {
+  image: string;
+  name: string;
+  text: string;
+}

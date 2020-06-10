@@ -39,7 +39,7 @@ const QuestionPage: FC = () => {
     0
   ) / 5
   if (!isNaN(average)){
-    history.push('/result/'+ average);
+    history.push('/result/'+ 'benrisha');
   }
 
   return (
