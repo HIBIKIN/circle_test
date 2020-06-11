@@ -3,7 +3,7 @@ import 'firebase/firestore';
 import 'firebase/firebase-storage';
 
 var firebaseConfig = {
-  apiKey: "AIzaSyDTwRxHZW9OKFtxvri8FInX9RqTjzbsfSQ",
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "circle-test-21c10.firebaseapp.com",
   databaseURL: "https://circle-test-21c10.firebaseio.com",
   projectId: "circle-test-21c10",
