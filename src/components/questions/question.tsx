@@ -54,6 +54,15 @@ const useStyle = makeStyles(() =>
       '&:hover': {
         boxShadow: "0px 0px 0px 15px #E0E0E0 inset",
       },
+      },
+    buttonActive: {
+      width: "50px",
+      height: "50px",
+      backgroundColor: "#fff",
+      borderRadius: "50%",
+      overflow: "hidden",
+      boxShadow: "0px 0px 0px 15px #A0A0A0 inset",
+      border: "none",
     },
     buttonText: {
       fontSize: "10px",
@@ -68,11 +77,12 @@ const useStyle = makeStyles(() =>
 type Props = {
   q: string,
   n:number,
-  handleAnswer: any
+  handleAnswer: any,
+  a: any
 }
 
 
-const Question: React.FC<Props> = ({n, q, handleAnswer}) => {
+const Question: React.FC<Props> = ({n, q, handleAnswer, a}) => {
   const classes = useStyle();
 
   return (
@@ -83,23 +93,23 @@ const Question: React.FC<Props> = ({n, q, handleAnswer}) => {
       <h2 className={classes.questionText}>{q}</h2>
       <div className={classes.choicelist}>
         <li className={classes.choice}>
-          <IconButton className={classes.button} onClick={() => handleAnswer(1)}></IconButton>
+          <IconButton className={a === 1 ? classes.buttonActive : classes.button} onClick={() => handleAnswer(1)}></IconButton>
           <p className={classes.buttonText}>とても当てはまる</p>
         </li>
         <li className={classes.choice}>
-          <IconButton className={classes.button} onClick={() => handleAnswer(2)}></IconButton>
+          <IconButton className={a === 2 ? classes.buttonActive : classes.button} onClick={() => handleAnswer(2)}></IconButton>
           <p className={classes.buttonText}>やや当てはまる</p>
         </li>
         <li className={classes.choice}>
-          <IconButton className={classes.button} onClick={() => handleAnswer(3)}></IconButton>
+          <IconButton className={a === 3 ? classes.buttonActive : classes.button} onClick={() => handleAnswer(3)}></IconButton>
           <p className={classes.buttonText}>どちらとも言えない</p>
         </li>
         <li className={classes.choice}>
-          <IconButton className={classes.button} onClick={() => handleAnswer(4)}></IconButton>
+          <IconButton className={a === 4 ? classes.buttonActive : classes.button} onClick={() => handleAnswer(4)}></IconButton>
           <p className={classes.buttonText}>あまり当てはまらない</p>
         </li>
         <li className={classes.choice}>
-          <IconButton className={classes.button} onClick={() => handleAnswer(5)}></IconButton>
+          <IconButton className={a === 5 ? classes.buttonActive : classes.button} onClick={() => handleAnswer(5)}></IconButton>
           <p className={classes.buttonText}>全く当てはまらない</p>
         </li>
       </div>

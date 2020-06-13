@@ -50,26 +50,31 @@ const QuestionPage: FC = () => {
         q={"友達100人作りたい"}
         n={1}
         handleAnswer={handleAnswer1}
+        a={a1}
       />
       <Question
         q={"自分、彼氏彼女ほしいっす"}
         n={2}
         handleAnswer={handleAnswer2}
+        a={a2}
       />
       <Question
         q={"お酒大好き！！"}
         n={3}
         handleAnswer={handleAnswer3}
+        a={a3}
       />
       <Question
         q={"スポーツ好き"}
         n={4}
         handleAnswer={handleAnswer4}
+        a={a4}
       />
       <Question
         q={"Youtbe見まっす！"}
         n={5}
         handleAnswer={handleAnswer5}
+        a={a5}
       />
     </div>
   );
